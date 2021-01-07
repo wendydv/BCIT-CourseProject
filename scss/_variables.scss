@@ -1,0 +1,48 @@
+//Variables 
+
+// Site Background Colours
+$site-body-grey: #EBEBEB;
+$site-white: white;
+$site-black: black;
+$site-transparent-dark:rgba(0, 0, 0, 0.705);
+$site-transparent-grey-dark:rgba(0, 0, 0, 0.548);
+$site-transparent-light: rgba(242, 242, 242, 0.247);
+$site-blue:  rgba(14, 62, 107, 0.726);
+
+// Site Text Colours
+$text-color-light: white;
+$text-color-dark: #212529;
+$text-color-gold: goldenrod;
+
+// Site Fonts
+$body-font: 'Karla', sans-serif;
+$heading-font: 'Montserrat', sans-serif;
+
+ // Header Variables
+ $header-height: 70px;
+ $header-height-mobile: 50px;
+
+// Spacing
+$site-padding: 40px;
+$site-padding-mobile: 20px;
+
+// Selectors
+$hover: '&:hover, &:focus, &:active';
+
+// Function to convert 
+// pixels to ems -> used
+// below for breakpoint values
+@function em($px, $bc: 16){
+    @return #{$px / $bc}em;
+}
+
+// Breakpoints
+$destop-1: em(1237);
+$destop: em(1024);
+$destop-narrow: em(900);
+$phone-wide: em(560);
+$phone: em(400);
+
+
+
+

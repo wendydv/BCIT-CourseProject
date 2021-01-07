@@ -1,0 +1,58 @@
+footer{
+    width: 100%;
+    padding: 5px;
+    color: $text-color-light;
+    background-color: $site-transparent-dark;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-grid{
+    width: 70%;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    text-align: left;
+    margin: 0 auto; 
+    padding-top: $site-padding;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted white; 
+    @include mq($destop-narrow){
+        width: 90%;
+    }
+
+    @include mq($phone){
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+}
+
+.find-us{
+    grid-column: 1;
+    grid-row: 1; 
+}
+
+.instructor-contact{
+    grid-column: 2;
+    grid-row: 1; 
+    @include mq($phone){
+        grid-row: 2;
+        grid-column: 1;
+    } 
+}
+
+.social-media{
+    @include flex;
+    @include flatten(true);
+    justify-content: left;
+}
+
+.social-media li{
+    padding-right: 5px;
+}
+
+.website-info{
+  margin-top: 10px;
+}

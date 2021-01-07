@@ -1,0 +1,29 @@
+body {
+	font-family: $body-font;
+	background-color: $site-body-grey;
+	line-height: 1.5;
+	font-weight: 400;
+	font-size: 18px;
+	color: $text-color-dark;
+}
+
+h1, h2, h3, p {
+	margin-top: 0;
+}
+
+h1, h2, h3, nav a {
+	font-family: $heading-font;
+}
+
+h1{
+	font-size: 23px;
+}
+
+h2{
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+p {
+	margin-bottom: 1rem;
+}

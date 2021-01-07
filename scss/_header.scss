@@ -1,0 +1,210 @@
+// Header
+.inner-header{
+  width: 100%;
+  @include flex;
+}
+
+.wrapper_02 header{
+    background-color: $site-transparent-dark;
+}
+
+.header-top-left{
+    width: 60%;
+    padding: 10px;
+    color: $text-color-light;
+    @include flex (true);
+    justify-content: left;
+    @include mq($destop-narrow){
+        padding: 0px;
+    }
+}
+
+.header-top-left a{
+    width: 10%;
+    margin-left: 10px;
+    margin-top: 10px;
+    @include mq($destop-narrow){
+        width: 18%;
+    }
+    @include mq($phone-wide){
+        width: 30%;
+    }
+}
+
+.header-top-left h1{
+    width: 50%;
+    margin-top: 25px;
+    margin-left: 10px;
+    font-size: 23px;
+    @include mq($destop){
+        font-size: 16px;
+    }
+    @include mq($destop-narrow){
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    @include mq($phone-wide){
+        display: none;
+    }
+}
+
+.menu-nav{
+    width: 40%;
+    margin-top: 15px;
+    @include mq($destop-narrow){
+        width: 1000%;
+        margin: 0 auto;
+        background-color: $site-transparent-dark;
+    }
+}
+
+.wrapper_02 .menu-nav{
+    @include mq($destop-narrow){
+        width: 100%;
+        background-color: transparent;
+    }
+}
+
+// Navigation
+header nav {
+
+    ul {
+        @include flex;
+        @include flatten(true);
+        li {
+            flex: 1;
+        }
+        a {
+            @include plain-link;
+            line-height: $header-height;
+            display: block;
+            font-size: 0.9rem;
+            text-align: center;
+            text-transform: uppercase;
+            #{$hover}{
+                border-bottom: solid 1px white;
+                color:$text-color-gold;
+            }
+        }
+    }
+
+    @include mq($destop-narrow){
+        display: none;
+        ul {
+            display: block;
+            a {
+                line-height: 40px;
+                #{$hover}{
+                    border-bottom: none;
+                    background-color: $site-transparent-light;
+                }
+            }
+        }
+        .show & {
+            display: block;
+        }
+        @at-root .show header {
+            height: auto;
+        }
+    }
+
+}
+
+// Menu Bottom Styles
+.hamburger-menu {
+    border-radius: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: center; 
+    float: right;
+    margin-top: 10px;
+    margin-right:10px;
+    display: none;
+    z-index: 2;
+  }
+
+  .hamburger-menu:focus,
+  .hamburger-menu:active,
+  .hamburger-menu:enabled,
+  .hamburger-menu-content:focus,
+  .hamburger-menu-content:active,
+  .hamburger-menu-content:enabled {
+      outline: none;
+  }
+      
+  .hamburger-menu-content {
+      display: block;
+      height: 30px;
+  }
+  
+  .bar,
+  .bar:after,
+  .bar:before {
+    width: 50px;
+    height: 5px;
+    border-radius: 20px; 
+}
+  
+  .bar {
+    position: relative;
+    transform: translateY(5px);
+    background:$site-white;
+    transition: all 0ms 300ms;
+    border-radius: 10px;
+    display: block; 
+}
+    .bar.animate {
+      background: $site-white; 
+    }
+  
+  .bar:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    background: $site-white;
+    transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1); 
+}
+  
+  .bar:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background: $site-white;
+    transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1); 
+}
+  
+  .bar.animate:after {
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 1; 
+}
+  
+  .bar.animate:before {
+    bottom: 0;
+    transform: rotate(-45deg);
+    transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1); }
+  
+  .hamburger-menu .bar.animate {
+    background: transparent; 
+}
+  
+  .hamburger-menu .bar.animate:before, .hamburger-menu .bar.animate:after {
+    background:$site-white; 
+}
+
+.hamburger-menu {
+    @include mq($destop-narrow){
+        display: block;
+		background-color: transparent;
+    }
+
+    @include mq($phone-wide){
+        font-size: 1.2rem;
+        line-height: $header-height-mobile;
+    }
+
+}

@@ -1,0 +1,15 @@
+// Resets
+
+// Box Sizing Resets
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+// Responsive Images Reset  
+img {
+	max-width: 100%;
+	height: auto;	
+}
